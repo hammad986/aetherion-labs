@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aetherion Labs - Agency Website
 
-## Getting Started
+A production-grade, highly-optimized agency website built for Aetherion Labs. Designed for trust, conversion, and authority building, utilizing Next.js, Tailwind CSS, and shadcn/ui.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** Next.js 16 (App Router, Turbopack)
+- **Styling:** Tailwind CSS
+- **Components:** shadcn/ui (Radix Primitives)
+- **Forms:** EmailJS integration
+- **Deployment:** Cloudflare Pages (Static Export)
+
+## 📂 Folder Structure
+
+```
+aetherion-labs/
+├── public/                 # Static assets (images, logos, fonts)
+│   └── assets/             # Project screenshots and founder images
+├── src/
+│   ├── app/                # Next.js App Router (Pages, Layouts, Sitemap, Robots)
+│   ├── components/         # Reusable React components
+│   │   ├── forms/          # Contact form and validation
+│   │   ├── layout/         # Navbar, Footer
+│   │   ├── sections/       # Modular page sections (Hero, Features, etc.)
+│   │   └── ui/             # shadcn/ui primitives
+│   ├── content/            # CMS Abstraction Layer (Data source)
+│   │   ├── projects.ts     # Case studies & portfolio data
+│   │   ├── company.ts      # Global company details
+│   │   ├── pricing.ts      # Pricing tiers and deliverables
+│   │   └── services.ts     # Agency capabilities
+│   ├── lib/                # Utilities and Services
+│   │   └── contact/        # Abstracted Email Service integration
+└── next.config.ts          # Next.js configuration (configured for static export)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Local Development Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Run Development Server**
+   ```bash
+   npm run dev
+   ```
+   *The site will be available at http://localhost:3000*
 
-## Learn More
+3. **Build for Production**
+   ```bash
+   npm run build
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. **Start Production Server (Local Testing)**
+   ```bash
+   npx serve@latest out
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ☁️ Deployment Instructions (Cloudflare Pages)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is optimized for high-performance static deployment to **Cloudflare Pages** utilizing advanced technical SEO.
 
-## Deploy on Vercel
+1. Push this repository to GitHub.
+2. Log in to your Cloudflare Dashboard and navigate to **Workers & Pages > Create application > Pages > Connect to Git**.
+3. Connect your GitHub account and select this repository.
+4. Configure the build settings:
+   - **Framework preset:** Next.js (Static HTML Export)
+   - **Build command:** `npm run build`
+   - **Build output directory:** `out`
+5. Click **Save and Deploy**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔐 Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Before going live, configure your email service provider (e.g., EmailJS, Resend) by adding the required keys to your `.env.local` (for development) and Cloudflare Pages Settings -> Environment Variables (for production):
+
+```env
+# Example for EmailJS integration in src/lib/contact/contact-service.ts
+NEXT_PUBLIC_EMAILJS_SERVICE_ID="your_service_id"
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID="your_template_id"
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY="your_public_key"
+```
+
+## 📝 Content Management
+
+All website content is abstracted from the UI. To update the site's content, edit the files located in `src/content/`:
+- Add new case studies to `projects.ts`
+- Update your social links in `company.ts`
+- Modify capabilities in `services.ts`
