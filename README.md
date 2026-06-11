@@ -86,3 +86,5 @@ All website content is abstracted from the UI. To update the site's content, edi
 - Add new case studies to `projects.ts`
 - Update your social links in `company.ts`
 - Modify capabilities in `services.ts`
+
+## DEVELOPED BY MUHAMMED HAMMAD
