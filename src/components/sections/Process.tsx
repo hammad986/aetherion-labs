@@ -1,42 +1,19 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Search, Map, Layers, Code2, TestTube, Rocket } from "lucide-react";
+import { processSteps } from "@/content/process";
 
-const processSteps = [
-  {
-    title: "Discovery",
-    description: "Deep dive into your business model, identifying operational bottlenecks and technical requirements.",
-    icon: <Search className="h-5 w-5" />
-  },
-  {
-    title: "Planning",
-    description: "Aligning on goals, defining core features, mapping user journeys, and finalizing the product roadmap.",
-    icon: <Map className="h-5 w-5" />
-  },
-  {
-    title: "Architecture",
-    description: "Designing scalable database schemas, system boundaries, and selecting the optimal technology stack.",
-    icon: <Layers className="h-5 w-5" />
-  },
-  {
-    title: "Development",
-    description: "Iterative, agile engineering focusing on code quality, performance, and integrating intelligent AI logic.",
-    icon: <Code2 className="h-5 w-5" />
-  },
-  {
-    title: "Testing",
-    description: "Rigorous QA, automated testing, and security auditing to ensure enterprise-grade reliability.",
-    icon: <TestTube className="h-5 w-5" />
-  },
-  {
-    title: "Delivery",
-    description: "Seamless deployment, hand-off documentation, and continuous monitoring for performance optimization.",
-    icon: <Rocket className="h-5 w-5" />
-  }
+const iconMap = [
+  <Search className="h-5 w-5" />,
+  <Map className="h-5 w-5" />,
+  <Layers className="h-5 w-5" />,
+  <Code2 className="h-5 w-5" />,
+  <TestTube className="h-5 w-5" />,
+  <Rocket className="h-5 w-5" />,
 ];
 
 export function Process() {
   return (
-    <section className="py-24 bg-white relative">
+    <section id="process" className="py-24 bg-white relative">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-4">Our Methodology</h2>

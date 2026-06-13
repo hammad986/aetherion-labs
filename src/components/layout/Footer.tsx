@@ -27,7 +27,7 @@ export function Footer() {
                 <a href={companyInfo.founder.social.portfolio} className="text-gray-400 hover:text-gray-900 transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Portfolio">
                   <span className="text-sm font-medium">Portfolio</span>
                 </a>
-                <a href="https://www.instagram.com/mud_.hammad" className="text-gray-400 hover:text-gray-900 transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <a href={companyInfo.founder.social.instagram} className="text-gray-400 hover:text-gray-900 transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                   <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                   <span className="sr-only">Instagram</span>
                 </a>
@@ -75,7 +75,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
-          <p>© {new Date().getFullYear()} {companyInfo.name}. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {companyInfo.name}. All rights reserved.</p>
           <p className="mt-2 md:mt-0">Built with modern web technologies.</p>
         </div>
       </div>

@@ -45,12 +45,25 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
     apple: [
-      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
     ],
+  },
+  applicationName: "Aetherion Labs",
+  appleWebApp: {
+    capable: true,
+    title: "Aetherion Labs",
+    statusBarStyle: "default",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  other: {
+    "theme-color": "#5cb85c",
+    "msapplication-TileColor": "#5cb85c",
   },
 };
 
@@ -62,6 +75,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} antialiased`}>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta name="theme-color" content="#5cb85c" />
         <GlobalSchema />
       </head>
       <body className="min-h-screen flex flex-col font-sans">

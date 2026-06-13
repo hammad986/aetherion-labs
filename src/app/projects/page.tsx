@@ -6,11 +6,31 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import type { Metadata } from "next";
+import { BreadcrumbListSchema } from "@/components/seo/SchemaMarkup";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Explore our portfolio of AI-powered web applications and automation systems.",
+  description: "Explore our portfolio of AI-powered web applications, automation systems, and intelligent software built with Next.js, Python, and modern cloud technologies.",
+  alternates: {
+    canonical: "https://aetherionlabs.qzz.io/projects",
+  },
+  openGraph: {
+    title: "Projects | Aetherion Labs",
+    description: "Explore our portfolio of AI-powered web applications, automation systems, and intelligent software.",
+    url: "https://aetherionlabs.qzz.io/projects",
+    siteName: "Aetherion Labs",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects | Aetherion Labs",
+    description: "Explore our portfolio of AI-powered applications and automation systems.",
+  },
 };
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aetherionlabs.qzz.io/" },
+  { name: "Projects", url: "https://aetherionlabs.qzz.io/projects" },
+];
 
 export default function ProjectsPage() {
   const featuredProjects = projects.filter(p => p.featured);
@@ -18,6 +38,8 @@ export default function ProjectsPage() {
 
   return (
     <div className="bg-gray-50 min-h-screen pb-24">
+      <BreadcrumbListSchema items={breadcrumbs} />
+
       {/* Header */}
       <div className="bg-white border-b border-gray-100 py-20">
         <div className="container mx-auto px-4 md:px-6 text-center">
@@ -39,8 +61,8 @@ export default function ProjectsPage() {
               <Card key={project.slug} className="overflow-hidden border-gray-200 bg-white hover:shadow-lg transition-all group flex flex-col h-full">
                 <div className="relative h-64 bg-gray-100 overflow-hidden">
                   {project.screenshots.length > 0 ? (
-                    <Image 
-                      src={project.screenshots[0]} 
+                    <Image
+                      src={project.screenshots[0]}
                       alt={project.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -77,8 +99,8 @@ export default function ProjectsPage() {
               <Card key={project.slug} className="border-gray-200 bg-white p-6 hover:border-primary/50 transition-colors flex flex-col sm:flex-row gap-6">
                 <div className="relative w-full sm:w-48 h-48 sm:h-auto rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
                    {project.screenshots.length > 0 ? (
-                    <Image 
-                      src={project.screenshots[0]} 
+                    <Image
+                      src={project.screenshots[0]}
                       alt={project.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
