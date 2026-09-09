@@ -1,39 +1,69 @@
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
-import { companyInfo } from "@/content/company";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-24 pb-32 lg:pt-36 lg:pb-40">
-      <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-        <div className="inline-flex items-center rounded-full border border-gray-200 bg-white/50 px-3 py-1 text-sm font-medium text-gray-800 backdrop-blur-sm mb-8">
-          <span className="flex h-2 w-2 rounded-full bg-primary mr-2"></span>
-          Aetherion Labs is now taking new clients for Q3
+    <section className="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-32">
+      {/* Ambient background glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-500/10 via-sky-500/5 to-transparent pointer-events-none -z-10 blur-3xl"></div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10 text-center max-w-5xl">
+        {/* Availability / Status Pill */}
+        <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/90 px-4 py-1.5 text-xs md:text-sm font-medium text-gray-700 shadow-xs backdrop-blur-md mb-8">
+          <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+          <span>Founder-Led Custom Software & Web Studio</span>
+          <span className="text-gray-300">•</span>
+          <span className="text-primary font-semibold">Taking New Projects</span>
         </div>
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 mb-8 max-w-4xl mx-auto leading-tight">
-          Build Faster with <span className="text-primary">AI-Powered</span> Web Apps & Automation
+
+        {/* Main Headline */}
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 mb-8 leading-[1.1]">
+          Build Your Idea. <br className="hidden sm:inline" />
+          <span className="bg-gradient-to-r from-gray-900 via-primary to-emerald-600 bg-clip-text text-transparent">
+            Launch Your Project.
+          </span>
         </h1>
-        <p className="text-xl md:text-2xl text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed">
-          {companyInfo.name} helps startups and creators launch custom AI tools, automation systems, and modern web applications.
+
+        {/* Subcopy */}
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed font-normal">
+          We design and build websites, web apps, AI solutions, automation systems, and custom software for startups, businesses, creators, and project owners.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href="/contact" className={buttonVariants({ size: "lg", className: "rounded-full px-8 h-14 text-base w-full sm:w-auto" })}>Start a Project <ArrowRight className="ml-2 h-5 w-5" /></Link>
-          <Link href="/projects" className={buttonVariants({ variant: "outline", size: "lg", className: "rounded-full px-8 h-14 text-base w-full sm:w-auto border-gray-200" })}>View Projects <ChevronRight className="ml-1 h-5 w-5 text-gray-400" /></Link>
+
+        {/* Primary and Secondary CTAs */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <Link
+            href="/contact"
+            className={buttonVariants({
+              size: "lg",
+              className: "rounded-full px-8 h-14 text-base font-semibold w-full sm:w-auto shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all",
+            })}
+          >
+            Start a Project <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
+          <Link
+            href="#selected-work"
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "rounded-full px-8 h-14 text-base font-semibold w-full sm:w-auto border-gray-200 hover:bg-gray-50 text-gray-700 hover:text-gray-900",
+            })}
+          >
+            View Our Work
+          </Link>
         </div>
-        <div className="mt-16 pt-8 border-t border-gray-100 flex flex-col items-center">
-          <p className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-6">Engineered with Modern Technologies</p>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70">
-             <span className="text-xl font-bold font-mono text-gray-800">Next.js</span>
-             <span className="text-xl font-bold font-mono text-gray-800">React</span>
-             <span className="text-xl font-bold font-mono text-gray-800">TypeScript</span>
-             <span className="text-xl font-bold font-mono text-gray-800">Tailwind</span>
-          </div>
+
+        {/* Subtle Trust Line */}
+        <div className="inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs sm:text-sm font-medium text-gray-500 bg-gray-50/80 border border-gray-200/80 rounded-full px-5 py-2">
+          <span>Founder-led development</span>
+          <span className="text-gray-300">•</span>
+          <span>Custom-built</span>
+          <span className="text-gray-300">•</span>
+          <span>US/Canada focused</span>
+          <span className="text-gray-300">•</span>
+          <span>Worldwide delivery</span>
         </div>
       </div>
-      
-      {/* Background decoration */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-50 via-white to-white"></div>
     </section>
   );
 }

@@ -1,17 +1,21 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-import { ArrowLeft, Home } from "lucide-react";
-import { BreadcrumbListSchema } from "@/components/seo/SchemaMarkup";
+import { Home } from "lucide-react";
 
-const breadcrumbs = [
-  { name: "Home", url: "https://aetherionlabs.qzz.io/" },
-  { name: "404", url: "https://aetherionlabs.qzz.io/404" },
-];
+export const metadata: Metadata = {
+  title: {
+    absolute: "404: Page Not Found | Aetherion Labs",
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function NotFound() {
   return (
     <div className="min-h-[70vh] flex items-center justify-center bg-white">
-      <BreadcrumbListSchema items={breadcrumbs} />
       <div className="text-center px-4">
         <h1 className="text-8xl font-extrabold text-gray-100 mb-4">404</h1>
         <h2 className="text-3xl font-bold text-gray-900 mb-4">Page Not Found</h2>

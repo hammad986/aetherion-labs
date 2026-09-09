@@ -13,7 +13,7 @@ export interface ContactFormData {
 export interface ContactServiceResponse {
   success: boolean;
   message?: string;
-  error?: any;
+  error?: unknown;
 }
 
 export interface IContactService {

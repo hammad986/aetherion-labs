@@ -2,187 +2,236 @@ import { companyInfo } from "@/content/company";
 import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-import { ArrowRight, Code2, BrainCircuit, Rocket } from "lucide-react";
+import { ArrowRight, Code2, Cpu, Workflow, Layers, ShieldCheck, Globe2, UserCheck } from "lucide-react";
 import type { Metadata } from "next";
-import { BreadcrumbListSchema, HowToSchema } from "@/components/seo/SchemaMarkup";
+import { BreadcrumbListSchema } from "@/components/seo/SchemaMarkup";
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description: "Learn about Aetherion Labs, our mission to build AI-powered software, our engineering philosophy, and the founder behind the code.",
+  title: {
+    absolute: "Aetherion Labs | Founder-Led Software Development Studio",
+  },
+  description: "Meet Aetherion Labs, a founder-led custom software and web development studio. We build production-ready digital products for clients across the US, Canada, and worldwide.",
   alternates: {
-    canonical: "https://aetherionlabs.qzz.io/about",
+    canonical: "https://hammad.dpdns.org/about",
   },
   openGraph: {
-    title: "About Us | Aetherion Labs",
-    description: "Learn about Aetherion Labs, our mission to build AI-powered software, our engineering philosophy, and the founder behind the code.",
-    url: "https://aetherionlabs.qzz.io/about",
+    title: "Aetherion Labs | Founder-Led Software Development Studio",
+    description: "Learn about Aetherion Labs, our engineering philosophy, and how we collaborate directly with founders and business owners.",
+    url: "https://hammad.dpdns.org/about",
     siteName: "Aetherion Labs",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us | Aetherion Labs",
-    description: "Learn about Aetherion Labs, our mission to build AI-powered software, our engineering philosophy, and the founder behind the code.",
+    title: "Aetherion Labs | Founder-Led Software Development Studio",
+    description: "Learn about Aetherion Labs, our engineering philosophy, and how we collaborate directly with founders and business owners.",
   },
 };
 
 const breadcrumbs = [
-  { name: "Home", url: "https://aetherionlabs.qzz.io/" },
-  { name: "About Us", url: "https://aetherionlabs.qzz.io/about" },
+  { name: "Home", url: "https://hammad.dpdns.org/" },
+  { name: "About", url: "https://hammad.dpdns.org/about" },
+];
+
+const studioPillars = [
+  {
+    title: "Full-Stack Web Engineering",
+    description: "Modern, type-safe web applications and high-performance websites built with Next.js, React, TypeScript, and clean CSS architectures.",
+    icon: <Code2 className="h-6 w-6 text-primary" />
+  },
+  {
+    title: "AI & Intelligent Systems",
+    description: "Practical AI integration using modern LLM APIs, retrieval-augmented generation (RAG) over business documents, and custom workflow logic.",
+    icon: <Cpu className="h-6 w-6 text-primary" />
+  },
+  {
+    title: "Automation & Integrations",
+    description: "Connecting disjointed systems, automating manual operational data flows, and engineering reliable backend pipelines.",
+    icon: <Workflow className="h-6 w-6 text-primary" />
+  },
+  {
+    title: "Product Development & MVPs",
+    description: "From napkin sketches to launched products. We guide technical scoping, build scalable database architectures, and deliver clean source code.",
+    icon: <Layers className="h-6 w-6 text-primary" />
+  }
 ];
 
 export default function AboutPage() {
   return (
     <div className="bg-white min-h-screen pb-24">
       <BreadcrumbListSchema items={breadcrumbs} />
-      <HowToSchema />
 
       {/* Header */}
-      <div className="bg-gray-50 border-b border-gray-100 py-20 lg:py-32">
+      <div className="bg-gray-50 border-b border-gray-100 py-16 lg:py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
-              Engineering the Future of <span className="text-primary">Automation</span>
+            <div className="inline-flex items-center gap-2 rounded-full bg-green-50 px-3.5 py-1 text-xs font-semibold text-primary mb-4 border border-green-100">
+              <Globe2 className="h-3.5 w-3.5" /> Founder-Led Studio
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-950 mb-6 leading-tight">
+              Engineering Practical Software With Direct Collaboration
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl">
-              We are a specialized engineering studio dedicated to helping ambitious startups and creators leverage artificial intelligence and modern web technologies to scale faster.
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-3xl">
+              Aetherion Labs is a custom software and digital product development studio. We design and build websites, web apps, AI tools, and automation systems for startups, businesses, creators, and innovators.
             </p>
           </div>
         </div>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 py-20">
-        {/* Founder Section */}
+        {/* Founder Story Section */}
         <div className="flex flex-col lg:flex-row gap-16 items-center mb-32">
-          <div className="lg:w-1/2">
-            <div className="relative w-full aspect-square md:aspect-video lg:aspect-square rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+          <div className="lg:w-5/12 flex justify-center">
+            <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-gray-100">
               <Image
                 src={companyInfo.founder.photo}
                 alt={companyInfo.founder.name}
                 fill
+                sizes="(max-width: 1024px) 384px, 400px"
                 className="object-cover"
+                priority
               />
             </div>
           </div>
-          <div className="lg:w-1/2 space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Founder-Led Engineering</h2>
-            <div className="prose prose-lg text-gray-600">
+
+          <div className="lg:w-7/12 space-y-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-700">
+              <UserCheck className="h-3.5 w-3.5 text-primary" /> Meet the Founder & Builder
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-950">
+              {companyInfo.founder.name}
+            </h2>
+
+            <div className="flex flex-wrap gap-2 text-xs sm:text-sm font-semibold text-primary">
+              {companyInfo.founder.roles.map((role, rIdx) => (
+                <span key={rIdx} className="bg-green-50 border border-green-100 px-3 py-1 rounded-full">
+                  {role}
+                </span>
+              ))}
+            </div>
+
+            <div className="space-y-4 text-gray-600 leading-relaxed text-base">
               <p>
-                Hi, I am {companyInfo.founder.name}. I started {companyInfo.name} because I saw a gap in the agency market. Too many agencies focus solely on surface-level design or generic WordPress templates, ignoring the immense potential of deeply integrated software.
+                I founded Aetherion Labs with a simple philosophy: software engineering should be transparent, founder-led, and centered on real utility. Traditional agencies often trap clients in layers of sales reps, account managers, and junior subcontractors — leading to miscommunication, inflated budgets, and missed deadlines.
               </p>
               <p>
-                My background is rooted in full-stack engineering, complex automation, and building AI-native applications. I wanted to create a studio that brings Silicon Valley-level engineering standards to startups and creators anywhere in the world.
+                At Aetherion Labs, you work directly with me. From initial architectural planning to writing production code and post-launch support, I personally ensure every line of code is clean, performant, and aligned with your business goals.
               </p>
               <p>
-                When you work with Aetherion Labs, you are not getting passed off to a junior developer. You are working directly with the architect building your systems, ensuring your vision is executed precisely and efficiently.
+                We serve clients across the United States, Canada, and internationally. Whether you are a startup needing an MVP, a small business modernizing your customer portal, a creator building an audience tool, or a developer needing prototype support, we bring hands-on dedication to every project.
               </p>
             </div>
-            <div className="pt-6">
-              <div className="flex items-center gap-4 text-gray-900 font-bold mb-2">
-                {companyInfo.founder.name}
-              </div>
-              <div className="text-gray-500 text-sm">Founder & Lead Engineer</div>
+
+            <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
+              <a
+                href={companyInfo.founder.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-semibold text-gray-600 hover:text-primary transition-colors flex items-center gap-1.5"
+              >
+                LinkedIn Profile <ArrowRight className="h-3 w-3" />
+              </a>
+              <span className="text-gray-300">•</span>
+              <a
+                href={companyInfo.founder.social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-semibold text-gray-600 hover:text-primary transition-colors flex items-center gap-1.5"
+              >
+                GitHub Repositories <ArrowRight className="h-3 w-3" />
+              </a>
+              <span className="text-gray-300">•</span>
+              <a
+                href={companyInfo.founder.social.portfolio}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-semibold text-gray-600 hover:text-primary transition-colors flex items-center gap-1.5"
+              >
+                Personal Portfolio <ArrowRight className="h-3 w-3" />
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Mission & Vision */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
-          <div className="bg-gray-50 rounded-3xl p-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
-            <p className="text-gray-600 leading-relaxed text-lg">
-              To empower startups and creators with enterprise-grade AI software that was previously only accessible to large corporations. We believe that intelligent automation should not be a luxury — it should be the foundation every ambitious product is built on.
-            </p>
-          </div>
-          <div className="bg-gray-50 rounded-3xl p-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
-            <p className="text-gray-600 leading-relaxed text-lg">
-              A world where every startup has access to the same caliber of AI engineering as Fortune 500 companies. We are building towards a future where intelligent systems handle the complex operational heavy lifting, freeing founders to focus on what matters most — their customers and their vision.
-            </p>
-          </div>
-        </div>
-
-        {/* AI & Automation Expertise */}
+        {/* Core Capabilities Grid */}
         <div className="mb-32">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Our Expertise</h2>
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-950 mb-4">
+              Our Core Technical Pillars
+            </h2>
+            <p className="text-gray-600 text-base leading-relaxed">
+              We specialize in the four disciplines required to design, build, and deploy modern digital software products.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="border border-gray-200 rounded-2xl p-8">
-              <div className="h-12 w-12 rounded-xl bg-green-50 flex items-center justify-center mb-6 text-primary border border-green-100">
-                <BrainCircuit className="h-6 w-6" />
+            {studioPillars.map((pillar, idx) => (
+              <div
+                key={idx}
+                className="p-8 rounded-3xl border border-gray-200/90 bg-gray-50/40 hover:bg-white hover:border-primary/40 hover:shadow-md transition-all duration-300"
+              >
+                <div className="h-12 w-12 rounded-xl bg-green-50 border border-green-100 flex items-center justify-center mb-6">
+                  {pillar.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {pillar.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {pillar.description}
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">AI Engineering</h3>
-              <p className="text-gray-600 leading-relaxed">
-                We specialize in building AI-native applications powered by large language models, computer vision, and custom machine learning pipelines. From RAG-based document intelligence to autonomous AI agents, we architect systems that think, reason, and adapt. Our expertise spans OpenAI GPT-4, Anthropic Claude, Google Gemini, LangChain, FAISS vector databases, and custom fine-tuned models.
-              </p>
-            </div>
-            <div className="border border-gray-200 rounded-2xl p-8">
-              <div className="h-12 w-12 rounded-xl bg-green-50 flex items-center justify-center mb-6 text-primary border border-green-100">
-                <Rocket className="h-6 w-6" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Automation Systems</h3>
-              <p className="text-gray-600 leading-relaxed">
-                We replace repetitive operational tasks with intelligent, reliable automation pipelines. Our systems handle document processing, data extraction, workflow orchestration, and third-party API integrations at scale. We build with Python, Redis queues, serverless architectures, and event-driven patterns that ensure zero-touch automation for your most critical business processes.
-              </p>
-            </div>
-            <div className="border border-gray-200 rounded-2xl p-8">
-              <div className="h-12 w-12 rounded-xl bg-green-50 flex items-center justify-center mb-6 text-primary border border-green-100">
-                <Code2 className="h-6 w-6" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Product Development</h3>
-              <p className="text-gray-600 leading-relaxed">
-                From idea to launched product in weeks. We build MVPs and full-scale SaaS platforms using Next.js, TypeScript, React, PostgreSQL, and modern cloud infrastructure. Every product we ship is type-safe, performant, and built to scale from day one. We do not cut corners — we architect for the long term.
-              </p>
-            </div>
-            <div className="border border-gray-200 rounded-2xl p-8">
-              <div className="h-12 w-12 rounded-xl bg-green-50 flex items-center justify-center mb-6 text-primary border border-green-100">
-                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Cloud & Infrastructure</h3>
-              <p className="text-gray-600 leading-relaxed">
-                We deploy to AWS, Vercel, Netlify, and Cloudflare with confidence. Our infrastructure-as-code approach ensures reproducible, secure, and scalable deployments. We implement CI/CD pipelines, automated testing, monitoring, and alerting so your systems run reliably at any scale.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Core Philosophy */}
-        <div className="bg-gray-900 rounded-3xl p-10 md:p-16 text-white text-center mb-32">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Core Philosophy</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16 text-left">
-            <div>
-              <div className="h-12 w-12 rounded-xl bg-gray-800 flex items-center justify-center mb-6 text-primary border border-gray-700">
-                <BrainCircuit />
+        {/* Mission & Client Commitment */}
+        <div className="bg-gray-900 rounded-3xl p-8 sm:p-14 text-white mb-20 shadow-xl">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h2 className="text-3xl sm:text-4xl font-extrabold">
+              Our Commitment to Clients
+            </h2>
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+              We believe quality software is built on honest expectations, disciplined engineering, and active communication.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 text-left">
+              <div className="p-5 rounded-2xl bg-gray-800/80 border border-gray-700">
+                <ShieldCheck className="h-6 w-6 text-emerald-400 mb-3" />
+                <h4 className="font-bold text-white text-base mb-1.5">No Bloat</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">
+                  We write lean, maintainable code without bloated templates or unnecessary dependencies.
+                </p>
               </div>
-              <h3 className="text-xl font-bold mb-4">AI as a Foundation</h3>
-              <p className="text-gray-400 leading-relaxed">
-                We believe AI should not be an afterthought. We build systems where intelligence is natively integrated into the core architecture to provide maximum leverage.
-              </p>
+
+              <div className="p-5 rounded-2xl bg-gray-800/80 border border-gray-700">
+                <Code2 className="h-6 w-6 text-emerald-400 mb-3" />
+                <h4 className="font-bold text-white text-base mb-1.5">100% IP Ownership</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">
+                  You own all source code, design assets, and database structures outright upon project completion.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-gray-800/80 border border-gray-700">
+                <Globe2 className="h-6 w-6 text-emerald-400 mb-3" />
+                <h4 className="font-bold text-white text-base mb-1.5">Global Delivery</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">
+                  Async-friendly workflows with US and Canadian business hours overlap for frictionless reviews.
+                </p>
+              </div>
             </div>
-            <div>
-              <div className="h-12 w-12 rounded-xl bg-gray-800 flex items-center justify-center mb-6 text-primary border border-gray-700">
-                <Code2 />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Uncompromising Quality</h3>
-              <p className="text-gray-400 leading-relaxed">
-                We use strictly modern, type-safe technologies (Next.js, TypeScript). This ensures the software we hand over is maintainable, scalable, and secure.
-              </p>
-            </div>
-            <div>
-              <div className="h-12 w-12 rounded-xl bg-gray-800 flex items-center justify-center mb-6 text-primary border border-gray-700">
-                <Rocket />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Speed to Impact</h3>
-              <p className="text-gray-400 leading-relaxed">
-                We understand that in startups, speed is a feature. Our modular approach allows us to deploy highly complex applications in weeks, not months.
-              </p>
+
+            <div className="pt-8">
+              <Link
+                href="/contact"
+                className={buttonVariants({
+                  size: "lg",
+                  className: "rounded-full px-8 h-14 text-base font-semibold bg-primary hover:bg-emerald-600 text-white shadow-md shadow-primary/25",
+                })}
+              >
+                Start a Project With Us <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </div>
           </div>
-        </div>
-
-        <div className="mt-32 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to see what we can build together?</h2>
-          <Link href="/contact" className={buttonVariants({ size: "lg", className: "rounded-full px-8 h-14" })}>
-            Let's Discuss Your Project <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
         </div>
       </div>
     </div>

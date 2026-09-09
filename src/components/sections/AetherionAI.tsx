@@ -51,7 +51,7 @@ export function AetherionAI() {
                   <Target className="h-5 w-5 text-primary" /> Why It Exists
                 </h4>
                 <p className="text-gray-400 leading-relaxed">
-                  Current enterprise AI is fragmented. Businesses require an orchestration layer that doesn't just answer questions, but autonomously executes sequences of tasks across disjointed SaaS tools safely and reliably.
+                  Current enterprise AI is fragmented. Businesses require an orchestration layer that doesn&apos;t just answer questions, but autonomously executes sequences of tasks across disjointed SaaS tools safely and reliably.
                 </p>
               </div>
               

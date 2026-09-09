@@ -7,19 +7,19 @@ export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'Privacy Policy for Aetherion Labs. Learn how we collect, use, and protect your data when you use our website and services.',
   alternates: {
-    canonical: 'https://aetherionlabs.qzz.io/privacy-policy',
+    canonical: 'https://hammad.dpdns.org/privacy-policy',
   },
   openGraph: {
     title: 'Privacy Policy | Aetherion Labs',
     description: 'Privacy Policy for Aetherion Labs. Learn how we collect, use, and protect your data.',
-    url: 'https://aetherionlabs.qzz.io/privacy-policy',
+    url: 'https://hammad.dpdns.org/privacy-policy',
     siteName: 'Aetherion Labs',
   },
 };
 
 const breadcrumbs = [
-  { name: 'Home', url: 'https://aetherionlabs.qzz.io/' },
-  { name: 'Privacy Policy', url: 'https://aetherionlabs.qzz.io/privacy-policy' },
+  { name: 'Home', url: 'https://hammad.dpdns.org/' },
+  { name: 'Privacy Policy', url: 'https://hammad.dpdns.org/privacy-policy' },
 ];
 
 export default function PrivacyPolicy() {
@@ -47,7 +47,7 @@ export default function PrivacyPolicy() {
       <div className='container mx-auto px-4 md:px-6 pt-16'>
         <div className='max-w-3xl prose prose-lg text-gray-600'>
           <p>
-            At Aetherion Labs ('Company', 'we', 'us', or 'our'), founded by Muhammed Hammad S, we are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us.
+            At Aetherion Labs (&apos;Company&apos;, &apos;we&apos;, &apos;us&apos;, or &apos;our&apos;), founded by Muhammed Hammad S, we are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us.
           </p>
           <p>
             When you visit our website and use our services, you trust us with your personal information. We take your privacy very seriously. In this privacy policy, we seek to explain to you in the clearest way possible what information we collect, how we use it, and what rights you have in relation to it.

@@ -1,11 +1,11 @@
 {
   "name": "Aetherion Labs",
-  "short_name": "Aetherion",
-  "description": "AI-powered web apps and automation tools for startups and creators.",
+  "short_name": "Aetherion Labs",
+  "description": "Founder-led custom software and digital product development studio serving clients across the United States, Canada, and worldwide.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#5cb85c",
+  "background_color": "#090d16",
+  "theme_color": "#10b981",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -13,6 +13,11 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
     },
     {
       "src": "/favicon-32x32.png",

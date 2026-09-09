@@ -4,7 +4,7 @@ import { projects } from '@/content/projects';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://aetherionlabs.qzz.io';
+  const baseUrl = 'https://hammad.dpdns.org';
 
   const staticRoutes = [
     '',

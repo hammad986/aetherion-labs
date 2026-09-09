@@ -1,20 +1,30 @@
 export const companyInfo = {
   name: 'Aetherion Labs',
-  positioning: 'AI-powered web apps & automation tools for startups and creators.',
+  tagline: 'Build Your Idea. Launch Your Project.',
+  positioning: 'Custom software and digital product development studio serving clients across the US, Canada, and worldwide.',
+  trustStatement: 'Serving clients across the US, Canada, and worldwide.',
   founder: {
     name: 'Muhammed Hammad S',
+    title: 'Founder & Lead Engineer',
+    roles: [
+      'Founder & Lead Engineer',
+      'AI & Full-Stack Developer',
+      'Custom Software Builder'
+    ],
     photo: '/assets/my_pic.jpeg',
-    bio: 'Software Engineer and AI Product Architect building next-generation automation tools and scalable web applications for startups.',
+    bio: 'Software engineer and full-stack product builder helping startups, businesses, creators, and individuals turn ideas into robust, production-ready applications. Working directly with clients from day one with clear communication, transparent scope, and zero agency overhead.',
     specialties: [
-      'AI Applications',
-      'Automation Systems',
-      'SaaS Development',
-      'Full Stack Engineering'
+      'Web Applications & Portals',
+      'Custom Software & Dashboards',
+      'AI Applications & Chatbots',
+      'Workflow Automation & APIs',
+      'Business Websites & MVPs',
+      'Prototypes & Proof-of-Concepts'
     ],
     social: {
       github: 'https://github.com/hammad986',
       linkedin: 'https://www.linkedin.com/in/muhammed-hammad-42659726a',
-      portfolio: 'https://calm-treacle-f1a990.netlify.app/',
+      portfolio: 'https://hammad.dpdns.org',
       instagram: 'https://www.instagram.com/mud_.hammad',
     }
   },
@@ -25,6 +35,6 @@ export const companyInfo = {
     github: 'https://github.com/hammad986',
     linkedin: 'https://www.linkedin.com/in/muhammed-hammad-42659726a',
     instagram: 'https://www.instagram.com/mud_.hammad',
-    portfolio: 'https://calm-treacle-f1a990.netlify.app/',
+    portfolio: 'https://hammad.dpdns.org',
   }
 };

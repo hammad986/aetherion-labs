@@ -37,7 +37,7 @@ export function ContactForm() {
           <CheckCircle2 className="h-16 w-16 text-green-500 mb-6" />
           <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Received</h3>
           <p className="text-gray-600 max-w-md">
-            Thank you for reaching out. We've received your project details and will be in touch within 24 hours to schedule a discovery call.
+            Thank you for reaching out. We&apos;ve received your project details and will be in touch within 24 hours to schedule a discovery call.
           </p>
         </CardContent>
       </Card>

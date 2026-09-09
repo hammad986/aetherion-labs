@@ -175,7 +175,8 @@ export const projects: ProjectSchema[] = [
     screenshots: [
       '/assets/invoice-gen-pro-images/homepage.png',
       '/assets/invoice-gen-pro-images/new-invoice.png',
-      '/assets/invoice-gen-pro-images/setting.png'
+      '/assets/invoice-gen-pro-images/setting.png',
+      '/assets/invoice-gen-pro-images/invoice-hero-showcase.png'
     ],
     demoUrl: 'https://invoice-generator-pro-by-aetherionlab.netlify.app/invoices',
     executiveOverview: 'Invoice Generator Pro is a lightning-fast, entirely client-side financial utility. It prioritizes speed, simplicity, and absolute privacy, allowing freelancers and small business owners to create beautifully formatted, mathematically complex invoices without creating accounts or paying monthly SaaS subscriptions.',

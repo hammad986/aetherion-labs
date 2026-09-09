@@ -1,7 +1,6 @@
 import { companyInfo } from "@/content/company";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 export function Founder() {
   return (

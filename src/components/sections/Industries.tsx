@@ -1,4 +1,4 @@
-import { Building2, Lightbulb, UserCheck, CodeSquare } from "lucide-react";
+import { Building2, Lightbulb, CodeSquare } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const industries = [

@@ -1,5 +1,5 @@
 import { services } from "@/content/services";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Cpu, Workflow, MessageSquare, Rocket, CheckCircle2 } from "lucide-react";
 
 // Map string icon names to Lucide components
@@ -29,15 +29,15 @@ export function Services() {
               <div className="p-8">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="h-14 w-14 rounded-xl bg-green-50 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors [&>svg]:group-hover:text-white">
-                    {iconMap[service.icon]}
+                    {iconMap[service.icon] || <Cpu className="h-6 w-6 text-primary" />}
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900">{service.title}</h3>
                 </div>
                 <p className="text-gray-500 mb-8 text-lg leading-relaxed">
-                  {service.description}
+                  {service.shortDescription}
                 </p>
                 <div className="space-y-3">
-                  {service.features.map((feature, i) => (
+                  {service.keyFeatures.map((feature, i) => (
                     <div key={i} className="flex items-center text-gray-700">
                       <CheckCircle2 className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
                       <span>{feature}</span>

@@ -23,12 +23,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${project.title} | Case Study`,
     description: project.description,
     alternates: {
-      canonical: `https://aetherionlabs.qzz.io/projects/${project.slug}`,
+      canonical: `https://hammad.dpdns.org/projects/${project.slug}`,
     },
     openGraph: {
       title: `${project.title} | Case Study | Aetherion Labs`,
       description: project.description,
-      url: `https://aetherionlabs.qzz.io/projects/${project.slug}`,
+      url: `https://hammad.dpdns.org/projects/${project.slug}`,
       siteName: "Aetherion Labs",
       images: [
         {
@@ -59,9 +59,9 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
   const isWeb = project.type === 'Web Application';
 
   const breadcrumbs = [
-    { name: "Home", url: "https://aetherionlabs.qzz.io/" },
-    { name: "Projects", url: "https://aetherionlabs.qzz.io/projects" },
-    { name: project.title, url: `https://aetherionlabs.qzz.io/projects/${project.slug}` },
+    { name: "Home", url: "https://hammad.dpdns.org/" },
+    { name: "Projects", url: "https://hammad.dpdns.org/projects" },
+    { name: project.title, url: `https://hammad.dpdns.org/projects/${project.slug}` },
   ];
 
   return (

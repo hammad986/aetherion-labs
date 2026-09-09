@@ -11,7 +11,7 @@ export function ContactCTA() {
           Ready to build something serious?
         </h2>
         <p className="text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
-          Let's discuss your project requirements, technical architecture, and how we can accelerate your time to market.
+          Let&apos;s discuss your project requirements, technical architecture, and how we can accelerate your time to market.
         </p>
         <Link href="/contact" className={buttonVariants({ size: "lg", variant: "secondary", className: "rounded-full px-8 h-14 text-base text-primary bg-white hover:bg-gray-100" })}>
           Start a Conversation <ArrowRight className="ml-2 h-5 w-5" />

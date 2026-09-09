@@ -7,19 +7,19 @@ export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'Terms of Service for Aetherion Labs. Read our operational guidelines, project scope, payment terms, and client responsibilities.',
   alternates: {
-    canonical: 'https://aetherionlabs.qzz.io/terms-of-service',
+    canonical: 'https://hammad.dpdns.org/terms-of-service',
   },
   openGraph: {
     title: 'Terms of Service | Aetherion Labs',
     description: 'Terms of Service for Aetherion Labs. Read our operational guidelines and client responsibilities.',
-    url: 'https://aetherionlabs.qzz.io/terms-of-service',
+    url: 'https://hammad.dpdns.org/terms-of-service',
     siteName: 'Aetherion Labs',
   },
 };
 
 const breadcrumbs = [
-  { name: 'Home', url: 'https://aetherionlabs.qzz.io/' },
-  { name: 'Terms of Service', url: 'https://aetherionlabs.qzz.io/terms-of-service' },
+  { name: 'Home', url: 'https://hammad.dpdns.org/' },
+  { name: 'Terms of Service', url: 'https://hammad.dpdns.org/terms-of-service' },
 ];
 
 export default function TermsOfService() {
@@ -47,7 +47,7 @@ export default function TermsOfService() {
       <div className='container mx-auto px-4 md:px-6 pt-16'>
         <div className='max-w-3xl prose prose-lg text-gray-600'>
           <p>
-            Welcome to Aetherion Labs ('Company', 'we', 'our', 'us'), founded by Muhammed Hammad S. These Terms of Service ('Terms') govern your use of our website and the custom software development, AI integration, and design services we provide (collectively, the 'Services'). By accessing our website or engaging us for Services, you agree to be bound by these Terms.
+            Welcome to Aetherion Labs (&apos;Company&apos;, &apos;we&apos;, &apos;our&apos;, &apos;us&apos;), founded by Muhammed Hammad S. These Terms of Service (&apos;Terms&apos;) govern your use of our website and the custom software development, AI integration, and design services we provide (collectively, the &apos;Services&apos;). By accessing our website or engaging us for Services, you agree to be bound by these Terms.
           </p>
 
           <h2 className='text-2xl font-bold text-gray-900 mt-12 mb-4'>1. Service Scope</h2>
@@ -67,7 +67,7 @@ export default function TermsOfService() {
 
           <h2 className='text-2xl font-bold text-gray-900 mt-12 mb-4'>4. Intellectual Property</h2>
           <p>
-            Upon receipt of full and final payment, the intellectual property rights to the custom software code, designs, and deliverables created specifically for the client will be transferred to the client. Aetherion Labs retains the right to reuse underlying open-source libraries, generic code snippets, algorithms, and architectural frameworks developed prior to or independently of the client's project. We also reserve the right to feature the completed project in our portfolio and marketing materials unless a specific Non-Disclosure Agreement (NDA) states otherwise.
+            Upon receipt of full and final payment, the intellectual property rights to the custom software code, designs, and deliverables created specifically for the client will be transferred to the client. Aetherion Labs retains the right to reuse underlying open-source libraries, generic code snippets, algorithms, and architectural frameworks developed prior to or independently of the client&apos;s project. We also reserve the right to feature the completed project in our portfolio and marketing materials unless a specific Non-Disclosure Agreement (NDA) states otherwise.
           </p>
 
           <h2 className='text-2xl font-bold text-gray-900 mt-12 mb-4'>5. Payments</h2>
@@ -77,12 +77,12 @@ export default function TermsOfService() {
 
           <h2 className='text-2xl font-bold text-gray-900 mt-12 mb-4'>6. Revisions and Scope Creep</h2>
           <p>
-            Projects include a predetermined number of revision rounds as defined in the SOW. Requests for additional features, design overhauls, or significant changes to the agreed-upon architecture that fall outside the original scope will be treated as 'scope creep' and billed at our standard hourly rate or requiring an addendum to the SOW.
+            Projects include a predetermined number of revision rounds as defined in the SOW. Requests for additional features, design overhauls, or significant changes to the agreed-upon architecture that fall outside the original scope will be treated as &apos;scope creep&apos; and billed at our standard hourly rate or requiring an addendum to the SOW.
           </p>
 
           <h2 className='text-2xl font-bold text-gray-900 mt-12 mb-4'>7. Delivery and Deployment</h2>
           <p>
-            We will make every reasonable effort to meet proposed project deadlines. However, software development is inherently complex, and unforeseen technical challenges may arise. We are not liable for business losses caused by delayed delivery. Upon completion, we will deploy the software to the client's chosen production environment and provide a hand-off technical document if requested.
+            We will make every reasonable effort to meet proposed project deadlines. However, software development is inherently complex, and unforeseen technical challenges may arise. We are not liable for business losses caused by delayed delivery. Upon completion, we will deploy the software to the client&apos;s chosen production environment and provide a hand-off technical document if requested.
           </p>
 
           <h2 className='text-2xl font-bold text-gray-900 mt-12 mb-4'>8. Limitation of Liability</h2>

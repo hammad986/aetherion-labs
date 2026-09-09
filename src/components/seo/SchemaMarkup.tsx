@@ -6,7 +6,6 @@ export function GlobalSchema() {
   const sameAs = [
     companyInfo.social.github,
     companyInfo.social.linkedin,
-    companyInfo.social.portfolio,
     companyInfo.social.instagram,
   ].filter(Boolean);
 
@@ -15,22 +14,23 @@ export function GlobalSchema() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://aetherionlabs.qzz.io/#organization",
-        "name": companyInfo.name,
-        "url": "https://aetherionlabs.qzz.io",
+        "@id": "https://hammad.dpdns.org/#organization",
+        "name": "Aetherion Labs",
+        "legalName": "Aetherion Labs",
+        "url": "https://hammad.dpdns.org",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://aetherionlabs.qzz.io/icon.png",
+          "url": "https://hammad.dpdns.org/icon.png",
           "width": 512,
           "height": 512,
         },
-        "description": companyInfo.positioning,
+        "description": "Founder-led custom software and digital product development studio serving clients across the United States, Canada, and worldwide.",
         "sameAs": sameAs,
         "founder": {
           "@type": "Person",
           "name": companyInfo.founder.name,
-          "jobTitle": "Founder & Lead Architect",
-          "url": companyInfo.founder.social.portfolio,
+          "jobTitle": "Founder & Lead Engineer",
+          "url": "https://hammad.dpdns.org/about",
           "sameAs": [
             companyInfo.founder.social.linkedin,
             companyInfo.founder.social.github,
@@ -40,28 +40,22 @@ export function GlobalSchema() {
         "contactPoint": {
           "@type": "ContactPoint",
           "email": companyInfo.contact.email,
-          "contactType": "sales",
-          "areaServed": "Worldwide",
-          "availableLanguage": "English"
+          "contactType": "customer support",
+          "areaServed": ["United States", "Canada", "Worldwide"],
+          "availableLanguage": ["English"]
         }
       },
       {
         "@type": "WebSite",
-        "@id": "https://aetherionlabs.qzz.io/#website",
-        "url": "https://aetherionlabs.qzz.io",
-        "name": companyInfo.name,
-        "description": companyInfo.positioning,
+        "@id": "https://hammad.dpdns.org/#website",
+        "url": "https://hammad.dpdns.org/",
+        "name": "Aetherion Labs",
+        "alternateName": "Aetherion Labs",
+        "description": "Founder-led custom software and digital product development studio serving clients across the United States, Canada, and worldwide.",
         "publisher": {
-          "@id": "https://aetherionlabs.qzz.io/#organization"
+          "@id": "https://hammad.dpdns.org/#organization"
         },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://aetherionlabs.qzz.io/search?q={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
-        }
+        "inLanguage": "en-US"
       }
     ]
   };
@@ -81,14 +75,14 @@ export function ProjectJsonLd({ project }: { project: ProjectSchema }) {
     "headline": project.title,
     "description": project.description,
     "author": {
-      "@id": "https://aetherionlabs.qzz.io/#organization"
+      "@id": "https://hammad.dpdns.org/#organization"
     },
     "publisher": {
-      "@id": "https://aetherionlabs.qzz.io/#organization"
+      "@id": "https://hammad.dpdns.org/#organization"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://aetherionlabs.qzz.io/projects/${project.slug}`
+      "@id": `https://hammad.dpdns.org/projects/${project.slug}`
     },
     "datePublished": "2025-01-01",
     "dateModified": new Date().toISOString().split('T')[0],
@@ -98,9 +92,9 @@ export function ProjectJsonLd({ project }: { project: ProjectSchema }) {
       "name": project.title,
       "applicationCategory": project.category,
       "operatingSystem": project.type === "Desktop Application" ? "Windows, macOS, Linux" : "Web Browser",
-      "url": project.demoUrl || project.downloadUrl || "https://aetherionlabs.qzz.io",
+      "url": project.demoUrl || project.downloadUrl || "https://hammad.dpdns.org",
       "author": {
-        "@id": "https://aetherionlabs.qzz.io/#organization"
+        "@id": "https://hammad.dpdns.org/#organization"
       }
     }
   };
@@ -120,13 +114,13 @@ export function ServiceSchema({ service }: { service: { id: string; title: strin
     "name": service.title,
     "description": service.description,
     "provider": {
-      "@id": "https://aetherionlabs.qzz.io/#organization"
+      "@id": "https://hammad.dpdns.org/#organization"
     },
     "serviceType": service.title,
-    "areaServed": "Worldwide",
+    "areaServed": ["United States", "Canada", "Worldwide"],
     "availableChannel": {
       "@type": "ServiceChannel",
-      "serviceUrl": `https://aetherionlabs.qzz.io/services#${service.id}`,
+      "serviceUrl": `https://hammad.dpdns.org/services#${service.id}`,
       "servicePhone": null
     },
     "hasOfferCatalog": {
@@ -155,22 +149,22 @@ export function ServicesPageSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Aetherion Labs Engineering Services",
-    "description": "Enterprise-grade software development and AI automation services for startups and businesses.",
+    "name": "Aetherion Labs Custom Software & Web Development Services",
+    "description": "Custom websites, web applications, AI chatbots, workflow automation, and software engineering services.",
     "provider": {
-      "@id": "https://aetherionlabs.qzz.io/#organization"
+      "@id": "https://hammad.dpdns.org/#organization"
     },
-    "areaServed": "Worldwide",
+    "areaServed": ["United States", "Canada", "Worldwide"],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Engineering Services",
+      "name": "Development Services",
       "itemListElement": services.map((service, idx) => ({
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
           "name": service.title,
-          "description": service.description,
-          "url": `https://aetherionlabs.qzz.io/services#${service.id}`
+          "description": service.shortDescription,
+          "url": `https://hammad.dpdns.org/services#${service.id}`
         },
         "position": idx + 1
       }))
@@ -190,10 +184,10 @@ export function ContactPageSchema() {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contact Aetherion Labs",
-    "description": "Get in touch with Aetherion Labs to discuss your AI software development project.",
-    "url": "https://aetherionlabs.qzz.io/contact",
+    "description": "Get in touch with Aetherion Labs to discuss your custom website, web application, AI, or software prototype project.",
+    "url": "https://hammad.dpdns.org/contact",
     "mainEntity": {
-      "@id": "https://aetherionlabs.qzz.io/#organization"
+      "@id": "https://hammad.dpdns.org/#organization"
     }
   };
 
@@ -232,50 +226,50 @@ export function FAQSchema() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What services does Aetherion Labs offer?",
+        "name": "What does Aetherion Labs do?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Aetherion Labs specializes in AI web applications, automation systems, AI chatbots and integrations, and startup MVP development. We build production-ready software using modern technologies like Next.js, TypeScript, LangChain, and custom LLM integrations."
+          "text": "Aetherion Labs is a founder-led custom software and digital product development studio. We design and build business websites, custom web applications, AI applications, AI chatbots, workflow automation pipelines, SaaS MVPs, student prototypes, and custom business tools."
         }
       },
       {
         "@type": "Question",
-        "name": "How long does a typical project take?",
+        "name": "Who does Aetherion Labs work with?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most MVP projects take 3-6 weeks, while comprehensive SaaS platforms take 6-12 weeks. Enterprise-grade systems with complex AI integrations can take 3-6 months depending on scope and requirements."
+          "text": "We work with startups, founders, small businesses, local businesses, creators, professionals, indie developers, and students with software ideas. We serve clients across the US, Canada, and internationally."
         }
       },
       {
         "@type": "Question",
-        "name": "Do you provide ongoing support after delivery?",
+        "name": "What is your pricing structure?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we offer ongoing maintenance and support retainers to ensure your systems scale securely. We also provide hand-off documentation and can train your team on the delivered systems."
+          "text": "We operate with clear, transparent project-based pricing. Business websites start from $1,200, web applications from $3,000, AI applications from $3,500, automation workflows from $1,500, and student prototypes from $350. Full SaaS MVPs and complex software are quoted on a custom scope basis."
         }
       },
       {
         "@type": "Question",
-        "name": "What technologies does Aetherion Labs use?",
+        "name": "How long does development typically take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We use strictly modern, type-safe technologies including Next.js, React, TypeScript, Python, LangChain, OpenAI GPT-4, Anthropic Claude, PostgreSQL, Supabase, and cloud platforms like AWS and Vercel."
+          "text": "Websites and automation pipelines typically take 1-3 weeks. Web applications and AI copilots take 3-6 weeks, and full SaaS MVPs take 4-8 weeks depending on scope and feature complexity."
         }
       },
       {
         "@type": "Question",
-        "name": "Do you sign NDAs?",
+        "name": "Do you sign NDAs before project discussions?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we take confidentiality seriously. We can sign an NDA before any deep technical discussions to protect your ideas and business logic."
+          "text": "Yes. We respect your intellectual property and confidentiality. We are happy to execute a mutual non-disclosure agreement before any deep technical discussions."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the pricing model?",
+        "name": "What is your student project positioning?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We work on a project-basis with transparent pricing ranges. Starter projects range from $3k-$8k, Growth projects from $8k-$20k, and Custom enterprise solutions start at $20k+. Every engagement begins with a free discovery call and tailored architectural proposal."
+          "text": "We provide ethical, professional development support to turn concept ideas, prototypes, and technical architectures into working demonstration software, complete with clean source code and walkthrough tutorials."
         }
       }
     ]
@@ -293,50 +287,50 @@ export function HowToSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Aetherion Labs Engineering Process",
-    "description": "Our structured, transparent engineering process designed to eliminate risk and guarantee product quality.",
-    "totalTime": "P8W",
+    "name": "Aetherion Labs Client Development Process",
+    "description": "Our 6-step collaborative process for scoping, building, and launching custom software.",
+    "totalTime": "P4W",
     "estimatedCost": {
       "@type": "MonetaryAmount",
       "currency": "USD",
-      "value": "5000"
+      "value": "3000"
     },
     "step": [
       {
         "@type": "HowToStep",
-        "name": "Discovery",
-        "text": "Deep dive into your business model, identifying operational bottlenecks and technical requirements.",
-        "url": "https://aetherionlabs.qzz.io/#process"
+        "name": "Tell Us What You Need",
+        "text": "Submit an inquiry detailing your project goals, references, or requirements.",
+        "url": "https://hammad.dpdns.org/#how-it-works"
       },
       {
         "@type": "HowToStep",
-        "name": "Planning",
-        "text": "Aligning on goals, defining core features, mapping user journeys, and finalizing the product roadmap.",
-        "url": "https://aetherionlabs.qzz.io/#process"
+        "name": "We Review the Idea",
+        "text": "Technical feasibility review and discovery conversation.",
+        "url": "https://hammad.dpdns.org/#how-it-works"
       },
       {
         "@type": "HowToStep",
-        "name": "Architecture",
-        "text": "Designing scalable database schemas, system boundaries, and selecting the optimal technology stack.",
-        "url": "https://aetherionlabs.qzz.io/#process"
+        "name": "Scope & Estimate",
+        "text": "Transparent project scope, deliverables, and milestone estimates.",
+        "url": "https://hammad.dpdns.org/#how-it-works"
       },
       {
         "@type": "HowToStep",
         "name": "Development",
-        "text": "Iterative, agile engineering focusing on code quality, performance, and integrating intelligent AI logic.",
-        "url": "https://aetherionlabs.qzz.io/#process"
+        "text": "Agile, custom development with live previews and iterative feedback.",
+        "url": "https://hammad.dpdns.org/#how-it-works"
       },
       {
         "@type": "HowToStep",
-        "name": "Testing",
-        "text": "Rigorous QA, automated testing, and security auditing to ensure enterprise-grade reliability.",
-        "url": "https://aetherionlabs.qzz.io/#process"
+        "name": "Review & Revisions",
+        "text": "Hands-on client testing, revisions, and performance optimization.",
+        "url": "https://hammad.dpdns.org/#how-it-works"
       },
       {
         "@type": "HowToStep",
-        "name": "Delivery",
-        "text": "Seamless deployment, hand-off documentation, and continuous monitoring for performance optimization.",
-        "url": "https://aetherionlabs.qzz.io/#process"
+        "name": "Launch & Handoff",
+        "text": "Production deployment, 100% source code handover, and post-launch support.",
+        "url": "https://hammad.dpdns.org/#how-it-works"
       }
     ]
   };

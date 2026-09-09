@@ -30,11 +30,24 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (allow .env.example template)
 .env*
+!.env.example
 
-# vercel
+# vercel & cloudflare
 .vercel
+.wrangler
+
+# python cache / scripts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# os / ide
+Thumbs.db
+.DS_Store
+.idea/
+.vscode/
 
 # typescript
 *.tsbuildinfo
