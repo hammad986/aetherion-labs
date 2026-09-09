@@ -13,7 +13,7 @@ export function Footer() {
           <div className="lg:col-span-4 space-y-5">
             <Link href="/" className="inline-flex items-center gap-2.5">
               <Image
-                src="/assets/aetherion_logo.png"
+                src="/assets/aetherion_brand_logo.png"
                 alt="Aetherion Labs"
                 width={32}
                 height={32}

@@ -35,7 +35,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-3 z-50 group">
           <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-gray-200/80 shadow-xs group-hover:scale-105 transition-transform bg-gray-900">
             <Image
-              src="/assets/aetherion_logo.png"
+              src="/assets/aetherion_brand_logo.png"
               alt="Aetherion Labs Logo"
               fill
               sizes="32px"
