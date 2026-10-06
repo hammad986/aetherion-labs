@@ -160,4 +160,4 @@ This application uses Next.js Static Export (`output: "export"` in `next.config.
 
 ## 📄 License & Ownership
 Copyright © 2026 Aetherion Labs. All rights reserved.
-Developed by Muhammed Hammad S.
+Developed by Muhammed Hammad S [Portfolio](https://hammad986.dpdns.org)
