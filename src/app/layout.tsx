@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
@@ -9,6 +10,8 @@ const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
 });
+
+const googleAnalyticsId = "G-E0N2ZWS9MM";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hammad.dpdns.org"),
@@ -108,6 +111,18 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${googleAnalyticsId}');
+          `}
+        </Script>
       </body>
     </html>
   );
